@@ -1,0 +1,28 @@
+*filter
+:INPUT ACCEPT [0:0]
+:FORWARD ACCEPT [0:0]
+:OUTPUT ACCEPT [0:0]
+:BLACKLIST - [0:0]
+
+:BLOCKED - [0:0]
+-A BLOCKED -p tcp -j LOG --log-prefix "Blocked: "
+-A BLOCKED -j DROP
+
+:FIREWALL - [0:0]
+-A INPUT -j FIREWALL
+-A FIREWALL -i lo -j ACCEPT
+-A FIREWALL -p icmp --icmp-type any -j ACCEPT
+-A FIREWALL -m state --state ESTABLISHED,RELATED -j ACCEPT
+
+# Blacklist Scan
+-A FIREWALL -i eth0 -p tcp -j BLACKLIST
+
+### Blacklist Rules ###
+
+# Restrict hammering on SSH
+-A INPUT -m hashlimit -m tcp -p tcp --dport 22 --hashlimit-above 30/hour --hashlimit-burst 2 --hashlimit-htable-expire 120000 --hashlimit-mode srcip --hashlimit-name ssh -m state --state NEW -j REJECT
+-A INPUT -m state --state NEW -m tcp -p tcp --dport 22 -j ACCEPT
+
+-A INPUT -j REJECT --reject-with icmp-host-prohibited
+-A FORWARD -j REJECT --reject-with icmp-host-prohibited
+COMMIT
