@@ -47,6 +47,7 @@
 
 # AS37963 Alibaba Advertising China
 120.24.0.0-120.27.255.255
+123.56.0.0-123.57.255.255
 182.92.0.0-182.92.255.255
 
 # AS56005 Henan Telcom Union Technology China
@@ -58,6 +59,7 @@
 
 # AS4808 CNC Group China
 1.93.0.0-1.93.255.255
+61.50.128.0-61.50.255.255
 111.192.0.0-111.207.255.255
 118.244.0.0-118.244.255.255
 122.115.32.0-122.115.63.255
@@ -502,6 +504,9 @@
 
 # AS15600 Finecom Telecommunications Switzerland
 77.239.32.0-77.239.63.255
+
+# AS34011 domainFACTORY Germany
+93.180.152.0-93.180.159.255
 
 # AS29354 PCE Net Germany
 213.185.80.0-213.185.87.255
@@ -1330,6 +1335,9 @@
 186.121.192.0-186.121.255.255
 190.181.0.0-190.181.63.255
 
+# AS52783 Skynet Telecomunicações Brazil
+177.200.64.0-177.200.79.255
+
 # AS28191 Jupiter Telecomunicacoes e Informatica Brazil
 189.90.32.0-189.90.47.255
 
@@ -1723,6 +1731,7 @@
 
 # AS55053 KW Datacenter Canada
 162.248.8.0-162.248.11.255
+167.88.32.0-167.88.47.255
 
 # AS5071 WesTel Telecommunications Canada
 204.244.0.0-204.244.255.255
@@ -1993,3 +2002,6 @@
 
 # AS23033 Wowrack USA
 173.0.48.0-173.0.63.255
+
+# AS31797 Galaxyvisions USA
+206.71.48.0-206.71.63.255
